@@ -19,8 +19,8 @@ It must have the following files in it:
 * Create the home page listing all components in alphabetical order (http://paularmstrong.github.io/swig/docs/#inheritance)
 * Create the component page
   * Displays a description of the component
-  * displays the css code in a <pre> with highlight
-  * displays the html code in a <pre> with highlight
+  * displays the css code in a `<pre>` with highlight
+  * displays the html code in a `<pre>` with highlight
   * displays a working example
   * See components/index.html to example
 
