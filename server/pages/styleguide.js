@@ -6,7 +6,6 @@ module.exports = function(req, res) {
     var styleguidePath = path.join(__dirname, '..', '..', 'templates', 'styleguide');
     var files          = fs.readdirSync(styleguidePath);
 
-
     files.forEach(filename => {
         if (filename === 'index.html') return;
 
@@ -15,8 +14,6 @@ module.exports = function(req, res) {
         var template = path.join(styleguidePath, filename);
         components.push({name, url, template});
     });
-
-    console.log(components);
 
     res.render('styleguide/index.html', {components});
 };
