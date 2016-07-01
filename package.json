@@ -4,7 +4,8 @@
   "description": "Where all the components live",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "npm run css; node server/index.js",
+    "css": "node-sass css/style.scss -o public"
   },
   "repository": {
     "type": "git",
