@@ -1,0 +1,30 @@
+
+.container {
+    max-width: $site-width;
+    margin: auto;
+}
+
+.row {
+    @include clearfix;
+
+    &.\+gutter {
+        margin-left: $grid-col-gutter * -1;
+    }
+}
+
+@for $i from 1 through $grid-col-number {
+    $width: percentage($i * $grid-col-width / 100);
+    @if $i == $grid-col-number {
+        $width: 100%;
+    }
+
+    .col-#{$i} {
+        float: left;
+        width: $width;
+
+        .row.\+gutter > & {
+            width: $width - $grid-col-gutter;
+            margin-left: $grid-col-gutter;
+        }
+    }
+}

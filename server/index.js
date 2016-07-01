@@ -21,6 +21,7 @@ app.use('/static', express.static(STATIC_FOLDER));
 
 // Pages
 app.get('/', require('./pages/home'));
+app.get('/styleguide', require('./pages/styleguide'));
 
 // Staring the server
 app.listen(3000, function(){

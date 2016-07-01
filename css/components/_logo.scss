@@ -1,0 +1,13 @@
+.hugefuckinglogo {
+    color: $color-main;
+    font-size: 60px;
+}
+
+.hugefuckinglogo-image {
+    content: url("#{$image-dir}/logo.png");
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}

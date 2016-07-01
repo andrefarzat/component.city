@@ -1,0 +1,27 @@
+$linkpill-height: 1.5rem;
+
+.link {
+    color: $color-main;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-main-muted;
+        cursor: pointer;
+    }
+}
+
+.linkpill {
+    background-color: $color-main;
+    color: $color-white;
+    text-decoration: none;
+    display: inline-block;
+    line-height: $linkpill-height;
+    height: $linkpill-height;
+    padding: {left: $padding; right: $padding; }
+    border-radius: $linkpill-height;
+
+    &:hover {
+        background-color: $color-main-muted;
+        cursor: pointer;
+    }
+}
