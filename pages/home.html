@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Component City</title>
+</head>
+<body>
+    <h2>Components:</h2>
+    <ul>
+        {% for component in components %}
+        <li>
+            <a href="{{ component.url }}">{{ component.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
