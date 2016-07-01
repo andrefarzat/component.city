@@ -1,0 +1,26 @@
+{
+  "name": "component.city",
+  "version": "0.1.0",
+  "description": "Where all the components live",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrefarzat/component.city.git"
+  },
+  "keywords": [
+    "component",
+    "city"
+  ],
+  "author": "andrefarzat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrefarzat/component.city/issues"
+  },
+  "homepage": "https://github.com/andrefarzat/component.city#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
