@@ -17,10 +17,10 @@
 
                 <div class="spacer +big"></div>
 
-                <ol class="list +inline">
-                    <?php foreach(getAllComponents() as $component): ?>
+                <ol class="list +bullet">
+                    <?php foreach(getAllComponents() as $i => $component): ?>
                         <li class="list-item">
-                            <a href="/<?php echo formatComponentUrl($component); ?>" class="linkpill"><?php echo $component; ?></a>
+                            <a href="/<?php echo formatComponentUrl($component); ?>" class="link"><?php echo $component; ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ol>

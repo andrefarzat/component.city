@@ -1,0 +1,10 @@
+/** Specific for this example */
+
+.spacer:hover {
+    background-color: lightgray;
+}
+
+.spacer.\+tiny:hover:before { content: '.spacer.+tiny'; }
+.spacer:hover:before { content: '.spacer'; }
+.spacer.\+big:hover:before { content: '.spacer.+big'; }
+.spacer.\+huge:hover:before { content: '.spacer.+huge'; }

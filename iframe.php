@@ -24,9 +24,9 @@ if (empty($implementation)) die('wtf?');
 <head>
     <title><?php echo $implementation['name'];?> - Component City</title>
     <meta charset="UTF-8" />
-    <?php if($component['hasCss']): ?>
-        <link rel="stylesheet" href="/components<?php echo $component['url']; ?>/style.css" />
-    <?php endif; ?>
+    <?php foreach($component['cssFiles'] as $css): ?>
+        <link rel="stylesheet" href="<?php echo $css; ?>" />
+    <?php endforeach; ?>
 </head>
 <body>
     <?php echo $implementation['content']; ?>

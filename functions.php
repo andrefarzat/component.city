@@ -88,7 +88,7 @@ function generateComponentObjectFromFolder($folderName)
         'url'             => '/' . $folderName,
         'description'     => '',
         'implementations' => array(),
-        'hasCss'          => 0,
+        'cssFiles'        => array(),
         'errors'          => array(),
     );
 
@@ -98,12 +98,7 @@ function generateComponentObjectFromFolder($folderName)
         }
 
         if (endsWith($file, '.css')) {
-            if ($file != 'style.css') {
-                $msg = "There can be only 'style.css' as css file. Please, remove '$file' from '$dirPath'.";
-                array_push($component['errors'], $msg);
-            } else {
-                $component['hasCss'] = 1;
-            }
+            array_push($component['cssFiles'], '/components/' . $folderName . '/' . $file);
             continue;
         }
 
