@@ -72,6 +72,8 @@ function generateComponentObjectFromFolder($folderName)
     $files = scandir($dirPath);
     $component = array(
         'name'            => $folderName,
+        'path'            => $dirPath,
+        'url'             => '/' . $folderName,
         'description'     => '',
         'implementations' => array(),
         'hasCss'          => 0,
@@ -88,17 +90,13 @@ function generateComponentObjectFromFolder($folderName)
                 $msg = "There can be only 'style.css' as css file. Please, remove '$file' from '$dirPath'.";
                 array_push($component['errors'], $msg);
             } else {
-                $compontent['hasCss'] = 1;
+                $component['hasCss'] = 1;
             }
             continue;
         }
 
         if (endsWith($file, '.html')) {
-            $implemtation = array(
-                'url'  => $dirPath . '/' . $file,
-                'name' => $file,
-            );
-
+            $implemtation = getImplementationByPath($component, $file);
             array_push($component['implementations'], $implemtation);
             continue;
         }
@@ -118,6 +116,22 @@ function generateComponentObjectFromFolder($folderName)
     }
 
     return $component;
+}
+
+/**
+ * @param {object} $component
+ * @param {string} $file
+ * @return {object}
+ */
+function getImplementationByPath($component, $file)
+{
+    $implemtation = array(
+        'url'     => $component['url'] . '/' . $file,
+        'name'    => $file,
+        'content' => file_get_contents($component['path'] . DIRECTORY_SEPARATOR . $file),
+    );
+
+    return $implemtation;
 }
 
 /**

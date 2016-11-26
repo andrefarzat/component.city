@@ -30,15 +30,9 @@
                 <?php foreach($component['implementations'] as $implementation): ?>
                 <div class="implementation">
                     <div class="implementation-name"><?php echo $implementation['name']; ?></div>
-                    <iframe class="implementation-iframe" src="<?php echo $implementation['url']; ?>" width="100%" height="400px"></iframe>
+                    <iframe class="implementation-iframe" src="iframe.php?url=<?php echo $implementation['url']; ?>" width="100%" height="400px"></iframe>
                 </div>
                 <?php endforeach; ?>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <pre><?php var_dump($component); ?></pre>
             </div>
         </div>
     </div>
