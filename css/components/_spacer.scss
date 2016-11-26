@@ -1,0 +1,11 @@
+.spacer {
+    $height: 1rem;
+    height: $height;
+    @include clearfix;
+
+    &.\+tiny { height: $height / 4; }
+    &.\+small { height: $height / 2; }
+
+    &.\+big { height: $height * 2; }
+    &.\+huge { height: $height * 4; }
+}

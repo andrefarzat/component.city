@@ -1,0 +1,27 @@
+.hugefuckinglogo {
+    color: $color-main;
+    font-size: 60px;
+}
+
+.hugefuckinglogo-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: $color-main;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: url("#{$image-dir}/logo-white.png") center center no-repeat;
+        background-size: contain;
+    }
+}

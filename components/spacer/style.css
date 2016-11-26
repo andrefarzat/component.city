@@ -1,0 +1,19 @@
+.spacer {
+    display: block;
+    height: 10px;
+}
+
+/** Clearfix */
+.spacer:before,
+.spacer:after {
+    display: table;
+    content: " ";
+}
+
+.spacer:after {
+    clear: both;
+}
+
+.spacer.\+tiny { height: 5px; }
+.spacer.\+big { height: 20px; }
+.spacer.\+huge { height: 40px; }

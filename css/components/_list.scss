@@ -1,0 +1,23 @@
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &.\+inline {}
+}
+
+.list-item {
+
+    .list.\+inline & {
+        display: inline-block;
+        margin-right: $margin;
+    }
+
+    .list.\+bullet & {
+        &:after { content: '•'; color: inherit; };
+        &:last-child:after { display: none; }
+        display: inline-block;
+    }
+
+}
