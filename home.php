@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-    <div class="container">
+    <div class="container +main">
         <div class="row">
             <div class="col-12">
 

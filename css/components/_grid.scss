@@ -2,6 +2,10 @@
 .container {
     max-width: $site-width;
     margin: auto;
+
+    &.\+main {
+        padding: 0 20px;
+    }
 }
 
 .row {

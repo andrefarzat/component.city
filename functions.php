@@ -1,6 +1,7 @@
 <?php
 
 define('CITY_COMPONENTS_FOLDER', '.' . DIRECTORY_SEPARATOR . 'components');
+define('CITY_DEBUG', 1);
 
 /**
  * @see http://stackoverflow.com/a/834355/1327401
@@ -70,7 +71,8 @@ function generateComponentObjectFromFolder($folderName)
 
     $files = scandir($dirPath);
     $component = array(
-        'path'            => $dirPath,
+        'name'            => $folderName,
+        'description'     => '',
         'implementations' => array(),
         'hasCss'          => 0,
         'errors'          => array(),
@@ -92,11 +94,26 @@ function generateComponentObjectFromFolder($folderName)
         }
 
         if (endsWith($file, '.html')) {
-            array_push($component['implementations'], $file);
+            $implemtation = array(
+                'url'  => $dirPath . '/' . $file,
+                'name' => $file,
+            );
+
+            array_push($component['implementations'], $implemtation);
+            continue;
+        }
+
+        if ($file == 'description.txt') {
+            $component['description'] = file_get_contents($dirPath . DIRECTORY_SEPARATOR . $file);
             continue;
         }
 
         $msg = "File '$file' is unnecessary. Please, remove it.";
+        array_push($component['errors'], $msg);
+    }
+
+    if (empty($component['description'])) {
+        $msg = "File 'description.txt' is missing.";
         array_push($component['errors'], $msg);
     }
 
