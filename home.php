@@ -3,9 +3,7 @@
 <html lang="en">
 <head>
     <title>Component City</title>
-    <meta charset="UTF-8" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <?php printHeaderTags(); ?>
 </head>
 <body>
     <div class="container +main">

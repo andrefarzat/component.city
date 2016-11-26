@@ -8,10 +8,14 @@ if ($uri == '/'):
     include 'home.php';
 elseif ($uri == '/about'):
     die('adicionar about aqui!');
-elseif ($uri == '/media'):
-    $component = generateComponentObjectFromFolder('media');
-    include 'component.php';
+elseif (preg_match('/^\/[\w\-]+$/', $uri, $matches)):
+    $componentName = substr($matches[0], 1, strlen($matches[0]));
+    try {
+        $component = generateComponentObjectFromFolder($componentName);
+    } catch(ComponentNotFoundException $e) {
+        include '404.php';
+    }
 else:
-    die('adicionar 404 aqui!');
+    include '404.php';
 endif;
 ?>

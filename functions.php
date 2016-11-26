@@ -3,6 +3,18 @@
 define('CITY_COMPONENTS_FOLDER', '.' . DIRECTORY_SEPARATOR . 'components');
 define('CITY_DEBUG', 1);
 
+class ComponentNotFoundException extends Exception {}
+
+/**
+ *
+ */
+function printHeaderTags()
+{
+    echo '<meta charset="UTF-8" />';
+    echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />';
+    echo '<link rel="stylesheet" href="/css/style.css" />';
+}
+
 /**
  * @see http://stackoverflow.com/a/834355/1327401
  */
@@ -66,7 +78,7 @@ function generateComponentObjectFromFolder($folderName)
     $dirPath = CITY_COMPONENTS_FOLDER . DIRECTORY_SEPARATOR . $folderName;
 
     if (! is_dir($dirPath)) {
-        throw new Exception("Component $folderName doesn't exist!");
+        throw new ComponentNotFoundException("Component $folderName doesn't exist!");
     }
 
     $files = scandir($dirPath);
