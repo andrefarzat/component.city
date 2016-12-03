@@ -1,0 +1,28 @@
+
+.bar {
+    position: relative;
+    height: 40px;
+}
+
+.bar-left,
+.bar-center,
+.bar-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid 1px red;
+}
+
+.bar-left {
+    left: 0;
+}
+
+.bar-center {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.bar-right {
+    right: 0;
+}
