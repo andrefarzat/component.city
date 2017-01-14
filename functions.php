@@ -10,9 +10,10 @@ class ComponentNotFoundException extends Exception {}
  */
 function printHeaderTags()
 {
-    echo '<meta charset="UTF-8" />';
-    echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />';
-    echo '<link rel="stylesheet" href="/css/style.css" />';
+    echo '<meta charset="UTF-8" />' . "\n";
+    echo '<link rel="shortcut icon" href="/images/favicon.png" type="image/png">' . "\n";
+    echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />' . "\n";
+    echo '<link rel="stylesheet" href="/css/style.css" />' . "\n";
 
     // google analytics
     echo <<<'EOT'

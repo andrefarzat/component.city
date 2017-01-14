@@ -4,6 +4,7 @@
 <head>
     <title>Component City</title>
     <?php printHeaderTags(); ?>
+
 </head>
 <body>
     <div class="container +main">

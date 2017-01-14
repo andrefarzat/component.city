@@ -1,7 +1,6 @@
 # Component.City
 
 
-
 ## Developing
 
 * To start the local server: `php -S 0.0.0.0:8000`
