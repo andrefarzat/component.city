@@ -1,4 +1,3 @@
-<?php require_once('functions.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +19,7 @@
                 <ol class="list +bullet">
                     <?php foreach(getAllComponents() as $i => $component): ?>
                         <li class="list-item">
-                            <a href="/<?php echo formatComponentUrl($component); ?>" class="link"><?php echo $component; ?></a>
+                            <a href="<?php echo $component->getUrl(); ?>" class="link"><?php echo $component->getName(); ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ol>

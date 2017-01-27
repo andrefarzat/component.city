@@ -1,5 +1,8 @@
 <?php
-require_once('functions.php');
+require_once('php/constants.php');
+require_once('php/classes.php');
+require_once('php/functions.php');
+
 $url  = $_GET['url'];
 $path = 'components' . str_replace('/', DIRECTORY_SEPARATOR, $url);
 
@@ -9,26 +12,26 @@ if (! is_file($path)):
 endif;
 
 $paths          = explode('/', $url);
-$component      = generateComponentObjectFromFolder($paths[1]);
+$component      = new Component($paths[1]);
 $implementation = array();
 
-foreach($component['implementations'] as $imp):
-    if ($imp['url'] == $url) $implementation = $imp;
-endforeach;
-
-if (empty($implementation)) die('wtf?');
+try {
+    $implementation = $component->getImplementationByUrl($url);
+} catch (ImplementationNotFoundException $e) {
+    die('wtf?');
+}
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title><?php echo $implementation['name'];?> - Component City</title>
+    <title><?php echo $implementation->getName();?> - Component City</title>
     <meta charset="UTF-8" />
-    <?php foreach($component['cssFiles'] as $css): ?>
+    <?php foreach($component->getCSSFiles() as $css): ?>
         <link rel="stylesheet" href="<?php echo $css; ?>" />
     <?php endforeach; ?>
 </head>
 <body>
-    <?php echo $implementation['content']; ?>
+    <?php echo $implementation->getContent(); ?>
 </body>
 </html>
